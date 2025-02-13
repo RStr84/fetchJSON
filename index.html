@@ -17,7 +17,7 @@
         .then((json) => console.log(json));
 
 
-    // Funktioniert
+    // Funktioniert; Standard GET (Angabe nicht notwendig) → bei POST anderer Header
     fetch('JsonSender.php',{ method: 'GET', headers: { 'Content-Type': 'application/json' },})
         .then((response) => response.json())
         .then((json) => console.log(json));
