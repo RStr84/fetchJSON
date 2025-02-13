@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    // Aufgabe 124:
+
+    // Funktioniert nicht, da text() keine Methode ist
+    fetch('JsonSender.php')
+        .then((response) => response.json()
+            .text())
+        .then((json) => console.log(json));
+
+
+    // Funktioniert
+    fetch('JsonSender.php',{ method: 'GET', headers: { 'Content-Type': 'application/json' },})
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+
+    // Funktioniert
+    fetch('JsonText.txt')
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+
+    // Funktioniert
+    fetch('JsonSender.php')
+        .then((response) => response.text())
+        .then((data) => JSON.parse(data))
+        .then((json) => console.log(json));
+
+
+
+
+
+
+</script>
+</body>
+</html>
