@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function outerFunction(outerVariable) {
+        const cloVariable = 'Hi ';
+        return function innerFunction(innerVariable)
+        {
+            console.log(cloVariable, outerVariable, innerVariable);
+        }
+    }
+
+    const newFunction = outerFunction('Guten');
+    newFunction('Morgen');
+    newFunction('Abend');
+
+    // Kurzform
+    outerFunction('Guten')('Morgen');
+    outerFunction('Guten')('Abend');
+</script>
+</body>
+</html>
